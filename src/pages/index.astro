@@ -1,17 +1,56 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LOGO from "../assets/img/logo.png"
+import Nav from "../components/Nav.astro"
+import Footer from "../components/Footer.astro"
+import Hero from "../components/Hero.astro"
+import History from "../components/History.astro"
+import MissionVision from "../components/MissionVision.astro"
+import JuntaDirectiva from "../components/JuntaDirectiva.astro"
+import MembershipSection from "../components/MembershipSection.astro"
+import ThemeToggle from "../components/ThemeToggle.astro"
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Asociación de Médicas de Panamá">
+  <Nav logo={LOGO.src} />
+
+  <!-- top anchor -->
+  <div id="top"></div>
+
+  <Hero />
+  <History />
+  <MissionVision />
+  <JuntaDirectiva />
+  <MembershipSection />
+  <Footer logo={LOGO.src} />
+  <ThemeToggle />
+
+  <!-- Mobile menu script -->
+  <script is:inline>
+    // Mobile menu toggle
+    const btn = document.getElementById("mobileMenuBtn");
+    const menu = document.getElementById("mobileMenu");
+    const overlay = document.getElementById("mobileMenuOverlay");
+
+    const closeMenu = () => {
+      menu?.classList.add("hidden");
+      overlay?.classList.add("hidden");
+    };
+
+    const openMenu = () => {
+      menu?.classList.remove("hidden");
+      overlay?.classList.remove("hidden");
+    };
+
+    btn?.addEventListener("click", () => {
+      const isHidden = menu?.classList.contains("hidden");
+      isHidden ? openMenu() : closeMenu();
+    });
+
+    overlay?.addEventListener("click", closeMenu);
+
+    // Cerrar menú al hacer click en un link
+    menu?.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
+  </script>
+</BaseLayout>

@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://asomepa.com/sitemap.xml
+
+# Block common bot paths
+Disallow: /_astro/
+Disallow: /.astro/
+Disallow: /api/
+Disallow: /admin/

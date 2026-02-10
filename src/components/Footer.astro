@@ -1,0 +1,65 @@
+---
+const { logo, alt = "Logo" } = Astro.props;
+---
+<footer id="contact" class="bg-gray-900 dark:bg-black text-white pt-16 pb-8 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+
+        <div class="col-span-1 md:col-span-1">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+              <img src={logo} alt={alt} />
+            </div>
+            <span class="font-display font-bold text-xl text-white tracking-wide">ASOMEPA</span>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Fortaleciendo el rol de la mujer en la medicina panameña desde 1977.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-4 text-primary">Navegación</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li><a class="hover:text-white transition-colors" href="#">Inicio</a></li>
+            <li><a class="hover:text-white transition-colors" href="#history">Sobre Nosotras</a></li>
+            <li><a class="hover:text-white transition-colors" href="#membership">Membresía</a></li>
+            <li><a class="hover:text-white transition-colors" href="#junta-directiva">Junta Directiva</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-4 text-primary">Contacto</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li class="flex items-center gap-2"><span class="material-icons-outlined text-xs">email</span> asomepaa@gmail.com</li>
+            <!-- <li class="flex items-center gap-2"><span class="material-icons-outlined text-xs">call</span> +507 1234-5678</li> -->
+            <li class="flex items-center gap-2"><span class="material-icons-outlined text-xs">location_on</span> Ciudad de Panamá, Panamá</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-4 text-primary">Síguenos</h4>
+          <div class="flex space-x-4">
+            <!-- Nota: Material Icons NO trae marcas reales (facebook, etc). Si quieres íconos reales: SVG o librería.
+                 Lo dejo igual a tu HTML para no romper el diseño. -->
+            <a target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white" href="https://www.facebook.com/Asomepa">
+              <span class="material-icons-outlined">facebook</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-500 text-sm text-center md:text-left mb-4 md:mb-0">
+          © 2016 - {new Date().getFullYear()} ASOMEPA. All Rights Reserved.
+        </p>
+        <p class="text-gray-500 text-sm text-center md:text-left mb-4 md:mb-0">
+          <a href="https://allappps.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Build by Allappps</a>
+        </p>
+        <div class="flex space-x-6 text-sm text-gray-500">
+          <a class="hover:text-white" href="#">Privacidad</a>
+          <a class="hover:text-white" href="#">Términos</a>
+        </div>
+      </div>
+    </div>
+  </footer>

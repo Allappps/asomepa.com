@@ -1,0 +1,116 @@
+---
+const miembros = [
+  {
+    nombre: "Dra. Dayara Martinez",
+    cargo: "Presidenta",
+    descripcion: "Médica con más de 20 años de experiencia, lidera la asociación con visión y compromiso.",
+    imagen: "/img/team/presidenta.jpg"
+  },
+  {
+    nombre: "Dra. Berta Aguilar",
+    cargo: "Vicepresidenta",
+    descripcion: "Especialista en medicina interna, apoya la gestión y coordinación de proyectos.",
+    imagen: "/img/team/vicepresidenta.jpg"
+  },
+  {
+    nombre: "Dra. Rocio Sanchez",
+    cargo: "Secretaria",
+    descripcion: "Responsable de la documentación y comunicación oficial de la asociación.",
+    imagen: "/img/team/secretaria.jpg"
+  },
+  {
+    nombre: "Dra. Carole Lawson",
+    cargo: "Subsecretaria",
+    descripcion: "Asiste en la gestión documental y apoya las funciones de la Secretaria General.",
+    imagen: "/img/team/subsecretaria.jpg"
+  },
+  {
+    nombre: "Dra. Akira Lee",
+    cargo: "Tesorera",
+    descripcion: "Administra los recursos financieros y garantiza la transparencia en la gestión.",
+    imagen: "/img/team/tesorera.jpg"
+  },
+  {
+    nombre: "Dra. Amaris Padilla",
+    cargo: "Subtesorera",
+    descripcion: "Colabora en la administración financiera y control de recursos de la asociación.",
+    imagen: "/img/team/subtesorera.jpg"
+  },
+  {
+    nombre: "Dra. Argelis Saenz",
+    cargo: "Vocal 1",
+    descripcion: "Colabora en la organización de eventos y actividades académicas.",
+    imagen: "/img/team/vocal1.jpg"
+  },
+  {
+    nombre: "Dra. Nilda Santamaria",
+    cargo: "Vocal 2",
+    descripcion: "Apoya en la coordinación de programas de capacitación y desarrollo profesional.",
+    imagen: "/img/team/vocal2.jpg"
+  },
+  {
+    nombre: "Dra. Ruby Castillo",
+    cargo: "Fiscal",
+    descripcion: "Vigila el cumplimiento de los estatutos y reglamentos de la asociación.",
+    imagen: "/img/team/fiscal.jpg"
+  },
+];
+---
+
+<section id="junta-directiva" class="py-16 bg-gray-50 dark:bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Título -->
+    <div class="text-center mb-12">
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-4">
+        Junta Directiva
+      </h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        Conoce a las profesionales que lideran nuestra asociación con dedicación y compromiso
+      </p>
+    </div>
+
+    <!-- Grid de Miembros -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {miembros.map((miembro) => (
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div class="flex flex-col sm:flex-row">
+            <!-- Imagen -->
+            <div class="sm:w-1/3 h-48 sm:h-auto bg-gradient-to-br from-primary to-sky-600 flex items-center justify-center">
+              <div class="w-24 h-24 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                <span class="text-white text-3xl font-bold">
+                  {miembro.nombre.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                </span>
+              </div>
+            </div>
+            
+            <!-- Información -->
+            <div class="sm:w-2/3 p-6">
+              <h3 class="font-bold text-xl text-gray-900 dark:text-white mb-1">
+                {miembro.nombre}
+              </h3>
+              <h4 class="text-primary font-semibold text-lg mb-3">
+                {miembro.cargo}
+              </h4>
+              {/* <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                {miembro.descripcion}
+              </p> */}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Mensaje final -->
+    <div class="mt-12 text-center">
+      <p class="text-gray-600 dark:text-gray-300 italic">
+        "Trabajando juntas por el avance de la medicina en Panamá"
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  #junta-directiva {
+    scroll-margin-top: 80px;
+  }
+</style>

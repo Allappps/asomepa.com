@@ -1,0 +1,24 @@
+---
+// Theme toggle component for dark/light mode
+---
+
+<!-- Dark mode toggle -->
+<div class="fixed bottom-6 right-6 z-50">
+  <button
+    id="themeToggleBtn"
+    class="w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform"
+    aria-label="Cambiar tema"
+  >
+    <span class="material-icons-outlined">dark_mode</span>
+  </button>
+</div>
+
+<script is:inline>
+  // Dark mode toggle + persistencia
+  const themeBtn = document.getElementById("themeToggleBtn");
+  themeBtn?.addEventListener("click", () => {
+    const root = document.documentElement;
+    root.classList.toggle("dark");
+    localStorage.setItem("theme", root.classList.contains("dark") ? "dark" : "light");
+  });
+</script>

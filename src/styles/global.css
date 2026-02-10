@@ -1,0 +1,46 @@
+/* Tailwind v4: una sola línea para cargar Tailwind */
+@import "tailwindcss"; /* v4: no más @tailwind base/components/utilities */ /* :contentReference[oaicite:4]{index=4} */
+
+/* Plugins oficiales (legacy JS plugins) */
+@plugin "@tailwindcss/forms";       /* :contentReference[oaicite:5]{index=5} */
+@plugin "@tailwindcss/typography";  /* :contentReference[oaicite:6]{index=6} */
+
+/*
+  Dark mode por clase (.dark) como tu HTML original (toggle en <html>).
+  En v4 esto se logra definiendo el variant dark con selector.
+*/
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Tokens (colores/fuentes) al estilo v4 (CSS-first) */
+@theme {
+  --color-primary: #0ea5e9;            /* sky-500 */
+  --color-background-light: #f8fafc;   /* slate-50 */
+  --color-background-dark: #0f172a;    /* slate-900 */
+  --color-surface-light: #ffffff;
+  --color-surface-dark: #1e293b;       /* slate-800 */
+
+  --font-display: "Playfair Display", serif;
+  --font-body: "Lato", sans-serif;
+
+  /* Shadow personalizado: `shadow-soft` */
+  --shadow-soft: 0 10px 40px -10px rgba(0,0,0,0.08);
+}
+
+/* Tu CSS “global” adicional (scroll + smooth) */
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}

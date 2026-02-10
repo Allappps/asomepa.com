@@ -1,0 +1,49 @@
+---
+const { logo, alt = "Logo" } = Astro.props;
+---
+ 
+ <!-- NAV -->
+ <nav class="sticky top-0 z-50 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <a href="#" class="flex-shrink-0 flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
+            <img src={logo} alt={alt} />
+          </div> 
+          <span class="font-display font-bold text-lg md:text-xl text-gray-900 dark:text-white tracking-wide">
+            Asociación de Médicas de Panamá
+          </span>
+        </a>
+
+        <div class="hidden md:flex space-x-8 items-center">
+          <a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Inicio</a>
+          <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium" href="#history">Sobre Nosotras</a>
+          <a class="bg-primary text-white px-5 py-2 rounded-full font-bold shadow-md hover:bg-sky-600 transition-transform transform hover:-translate-y-0.5" href="#contact">
+            Contactos
+          </a>
+        </div>
+
+        <!-- Mobile button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobileMenuBtn" class="text-gray-700 dark:text-gray-200 hover:text-primary p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Abrir menú">
+            <span class="material-icons-outlined text-3xl">menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenuOverlay" class="fixed inset-0 bg-black/50 hidden md:hidden z-40"></div>
+
+    <div id="mobileMenu" class="md:hidden fixed top-20 left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-lg hidden z-50">
+      <div class="px-4 py-6 flex flex-col gap-4">
+        <a class="font-semibold text-primary text-lg py-2 border-b border-gray-100 dark:border-gray-800" href="#top">Inicio</a>
+        <a class="font-medium text-gray-800 dark:text-gray-200 hover:text-primary text-lg py-2 transition-colors" href="#history">Sobre Nosotras</a>
+        <a class="font-medium text-gray-800 dark:text-gray-200 hover:text-primary text-lg py-2 transition-colors" href="#membership">Membresía</a>
+        <a class="font-medium text-gray-800 dark:text-gray-200 hover:text-primary text-lg py-2 transition-colors" href="#junta-directiva">Junta Directiva</a>
+        <a class="mt-4 bg-primary text-white px-6 py-3 rounded-full font-bold shadow-md hover:bg-sky-600 transition-all text-center" href="#contact">
+          Contactos
+        </a>
+      </div>
+    </div>
+  </nav>

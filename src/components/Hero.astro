@@ -1,0 +1,58 @@
+---
+interface Props {
+  imageUrl?: string;
+}
+
+const { imageUrl = "https://lh3.googleusercontent.com/aida-public/AB6AXuCLCQuZP4wePxTUfn-g8rXVdKlivG-KZihanPK_8ogI9mMuEZIoql_aB23tiznRdmYqN_aKzC4uYboxKZjIxUcCAcMnV5qnN7VT8siaQtHIIY3kQ8ZF52xH_JNN4H-5AMWZ6KpYe9d6X96ysxjFQnCHW5CfDOjQHX4METYVjDIV3rxQBJf8PnRjVog5LB_rQPBFqCbT0-Hh-3WksDXS7KySVI7GQ9_uFRzjGRsq_3WXlwMmrwzJE3v0r9qaUU3oy-4qi1_2UHYy5g" } = Astro.props;
+---
+
+<!-- HERO -->
+<section class="relative overflow-hidden" aria-labelledby="hero-heading">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
+      <div class="flex flex-col justify-center px-6 py-16 lg:px-12 xl:pr-20 z-10 relative">
+        <div class="w-20 h-1 bg-primary mb-8 rounded-full"></div>
+        <h1 id="hero-heading" class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-6">
+          Asociación de <br />
+          <span class="text-primary">Médicas de Panamá</span>
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-lg">
+          Uniendo a mujeres profesionales de la medicina para transformar la salud, fomentar el liderazgo y crear un futuro más equitativo en Panamá.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a class="bg-primary text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-sky-500/30 hover:shadow-sky-500/50 transition-all" href="#history">
+            Nuestra Historia
+          </a>
+          <a class="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700 px-8 py-3 rounded-full font-bold hover:bg-gray-50 dark:hover:bg-gray-700 transition-all" href="#membership">
+            Hacerse miembro
+          </a>
+        </div>
+      </div>
+
+      <div class="relative h-64 lg:h-auto lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+        <div class="absolute inset-0 bg-gradient-to-r from-background-light dark:from-background-dark to-transparent lg:via-background-light/20 z-10 lg:w-20"></div>
+
+        <img
+          alt="Doctoras trabajando en equipo médico - Asociación de Médicas de Panamá"
+          class="h-full w-full object-cover rounded-bl-[4rem] lg:rounded-bl-[6rem] shadow-2xl"
+          src={imageUrl}
+          loading="eager"
+          decoding="async"
+          width="800"
+          height="600"
+        />
+
+        <div class="absolute bottom-10 right-10 z-20 bg-white/90 dark:bg-gray-800/90 backdrop-blur p-4 rounded-xl shadow-xl max-w-xs hidden sm:block">
+          <div class="flex items-center gap-3">
+            <span class="material-icons-outlined text-primary text-3xl">verified_user</span>
+            <div>
+              <p class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Fundada en</p>
+              <p class="text-xl font-bold text-gray-900 dark:text-white">1977</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

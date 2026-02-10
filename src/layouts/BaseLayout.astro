@@ -1,0 +1,111 @@
+---
+import "../styles/global.css";
+
+const { title = "Asociación de Médicas de Panamá" } = Astro.props;
+const description = "ASOMEPA - Asociación de Médicas de Panamá. Uniendo profesionales de la medicina para transformar la salud y fortalecer el liderazgo femenino en Panamá desde 1977.";
+const keywords = "asociación médicas panamá, ASOMEPA, médicas panamá, salud panamá, mujeres medicina, asociación médica, salud femenina";
+const url = "https://asomepa.com";
+const image = "/og-image.jpg";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Asociación de Médicas de Panamá" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Spanish" />
+    <meta name="geo.region" content="PA" />
+    <meta name="geo.placename" content="Panamá" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_PA" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={url} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" crossorigin href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Icons Outlined -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- Performance Optimizations -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Asociación de Médicas de Panamá",
+      "alternateName": "ASOMEPA",
+      "url": "https://asomepa.com",
+      "logo": "https://asomepa.com/logo.png",
+      "description": "Asociación de Médicas de Panamá - Uniendo profesionales de la medicina para transformar la salud y fortalecer el liderazgo femenino en Panamá desde 1977.",
+      "foundingDate": "1977",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "PA",
+        "addressLocality": "Panamá"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "asomepaa@gmail.com",
+        "contactType": "general"
+      },
+      "sameAs": []
+    }
+    </script>
+
+    <!--
+      Tema: persistencia con localStorage para evitar "flash".
+      Si guardaste 'dark' => aplica clase 'dark' en <html>.
+    -->
+    <script is:inline>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        if (saved === "dark") document.documentElement.classList.add("dark");
+      })();
+    </script>
+  </head>
+
+  <body class="bg-background-light dark:bg-background-dark text-gray-700 dark:text-gray-300 font-body transition-colors duration-300">
+    <slot />
+  </body>
+</html>
